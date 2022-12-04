@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/index.css" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+    <link rel="icon" type="image/svg+xml" href="./public/images/favicon.svg" />
+    <link rel="icon" type="image/png" href="./public/images/favicon.png" />
+    <title>Lift Simulation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div id="root">
+      <main class="home">
+        <form>
+          <label for="no_of_lift">Number of Lifts</label>
+          <input id="no_of_lift" type="number" min="1" value="1" />
+          <label for="no_of_floors">Number of Floors</label>
+          <input id="no_of_floors" type="number" min="1" value="1" />
+          <p class="error-msg"></p>
+          <button class="btn btn-submit" type="submit">Submit</button>
+        </form>
+      </main>
+
+      <main class="building">
+        <!-- <div class="floor">
+          <div class="btn-container">
+            <button class="btn btn-up fa fa-arrow-up"></button>
+            <button class="btn btn-down fa fa-arrow-down"></button>
+          </div>
+
+          <div class="lift">
+            <div class="door-left"></div>
+            <div class="door-right"></div>
+          </div>
+          <div class="lift">
+            <div class="door-left"></div>
+            <div class="door-right"></div>
+          </div>
+        </div> -->
+        <div class="floor">
+          <div>
+            <button class="btn btn-up fa fa-arrow-up"></button>
+            <button class="btn btn-down fa fa-arrow-down"></button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+
+  <script type="module" src="index.ts"></script>
+  <!-- <script src="./src/js/react.tsx"></script> -->
+</html>

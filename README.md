@@ -1,6 +1,22 @@
 # Lift-Simulation
 Create a web app where you can simulate lift mechanics for a client
 
+# Entry Point 
+- To start the app run `yarn parcel index.html`.
+- 
+
+# Accesibility Checks
+
+[x] Constrast
+[x] Semantics
+[]
+
+# Future Scope
+- Floors have working - treu/false state
+- Power cut case
+- handling Internal Requests
+- 
+
 # UI Example
 ![Lift Simulation Example](Lift-Simulation-Example.png "Lift Simulation Example")
 

@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary: rgb(1, 134, 250);
+  --secondary: rgb(247, 224, 165);
+  --dark-bg: rgb(41, 41, 41);
+  --door_transition_speed: 2.5s;
+  --lift-speed: 2s;
+  --height-of-floors: 140;
+  --lift-width: 60;
+}
+.home,
+.building {
+  /* background-color: var(--dark-bg); */
+  height: 100vh;
+}
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-weight: bolder;
+  background-color: var(--primary);
+  cursor: pointer;
+}
+.btn-primary {
+  background-color: var(--primary);
+}
+.btn-up {
+  background-color: green;
+}
+.btn-down {
+  background-color: yellow;
+  /* rgb(254, 208, 4) */
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary);
+}
+input {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.4rem;
+}
