@@ -1,6 +1,6 @@
 import { Direction, State, TFloor, TLift } from "./types";
 import { Lift } from "./utils";
-import react from "./react";
+import react, { render } from "./react";
 const { createElement } = react;
 // import { Direction } from "./types";
 //constants
@@ -19,27 +19,56 @@ document.querySelector("form").onsubmit = (e) => {
   numOfLifts = Number(
     (document.getElementById("no_of_lift") as HTMLInputElement).value
   );
-  //   createLifts()
-  createFloors(numOfFloors);
+  const lifts = createLifts(numOfLifts);
+  createFloors(numOfFloors, lifts);
   //   console.log(numOfFloors, numOfLifts);
 };
 const floorEl = document.querySelector(".floor");
-const createFloors = (numOfFloors) => {
+// floorEl.setAttribute("onclick", ()=>{})
+
+const createFloors = (numOfFloors, lifts) => {
   const buildingEl = document.querySelector(".building");
 
-  for (let i = 1; i < numOfFloors; i++) {
-    const floor = createElement("div", { class: "floor", id: "1" }, [
-      createElement("div", { class: "btn-container" }, [
-        createElement("div", { class: "btn btn-up fa fa-arrow-up" }, ""),
-        createElement("div", { class: "btn btn-down fa fa-arrow-down" }, ""),
-      ]),
-    ]);
+  for (let i = numOfFloors; i >= 1; i--) {
+    const floor = createElement(
+      "div",
+      {
+        class: "floor",
+        id: i,
+        onclick: (e) => {
+          console.log(e.target, i);
+        },
+      },
+      [
+        createElement("div", { class: "btn_container" }, [
+          createElement("h3", { class: "floor_no" }, [`Floor ${i}`]),
+          i !== numOfFloors &&
+            createElement("div", {
+              class: "btn btn_up fa fa-arrow-up",
+            }),
+          i !== 1 &&
+            createElement("div", { class: "btn btn_down fa fa-arrow-down" }),
+        ]),
+      ]
+    );
 
-    buildingEl.appendChild(floor);
+    if (i == 1) floor.children.push(...lifts);
+
+    render(floor, buildingEl);
   }
 };
-
-const createLifts = () => {};
+const createLifts = (numOfLifts) => {
+  const lifts = Array(numOfLifts)
+    .fill(0)
+    .map((_, i) => {
+      return createElement("div", { class: "lift", id: i }, [
+        createElement("div", { class: "door_left" }),
+        createElement("div", { class: "door_right" }),
+      ]);
+    });
+  return lifts;
+};
+createFloors(6, createLifts(6));
 
 const floors: TFloor[] = [];
 const lifts: TLift[] = [];
@@ -51,13 +80,14 @@ const liftEl = document.getElementsByClassName(
   "lift"
 ) as HTMLCollectionOf<HTMLElement>;
 
-const submit = () => {};
-
 setTimeout(() => {
   if (liftEl.length) {
-    liftEl[0].style.transitionDuration = `${speedOfLift}s`;
-    liftEl[0].style.top = "140px";
     liftEl[0].classList.toggle("open");
     console.log(liftEl[0].classList);
   }
 }, doorOpenSpeed);
+
+const moveLiftToFloor = () => {
+  liftEl[0].style.transitionDuration = `${speedOfLift}s`;
+  liftEl[0].style.top = "-140px";
+};

@@ -28,10 +28,10 @@
 .btn-primary {
   background-color: var(--primary);
 }
-.btn-up {
+.btn_up {
   background-color: green;
 }
-.btn-down {
+.btn_down {
   background-color: yellow;
   /* rgb(254, 208, 4) */
 }

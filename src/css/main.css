@@ -7,6 +7,11 @@
   gap: 2rem;
   height: calc(var(--height-of-floors) * 1px);
 }
+.btn_container{
+  width: 100px;
+  text-align: center;
+}
+/* lift */
 .lift {
   background-color: rgb(250, 250, 250);
   width: calc(var(--lift-width) * 1px);
@@ -16,23 +21,23 @@
   overflow: hidden;
   transition: top ease-in-out;
 }
-.door-left,
-.door-right {
+.door_left,
+.door_right {
   position: absolute;
   width: 50%;
   height: 100%;
   background-color: var(--primary);
   transition: all var(--door_transition_speed) ease-in-out;
 }
-.lift .door-left {
+.lift .door_left {
   left: 0;
 }
-.lift .door-right {
+.lift .door_right {
   right: 0;
 }
-.lift.open .door-left {
+.lift.open .door_left {
   left: -30px;
 }
-.lift.open .door-right {
+.lift.open .door_right {
   right: -30px;
 }
