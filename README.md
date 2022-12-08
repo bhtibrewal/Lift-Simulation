@@ -20,11 +20,6 @@ export enum State {
   Stop = -1,
 }
 export class Lift {
-  constructor(id: string, currentDirection: Direction, currentState: State) {
-    this.id = id;
-    this.currentDirection = currentDirection;
-    this.currentState = currentState;
-  }
   id: string;
   currentDirection: Direction;
   currentState: State;
@@ -32,9 +27,6 @@ export class Lift {
 }
 
 export class Floor {
-  constructor(id: number) {
-    this.id = id;
-  }
   id: number;
   readonly working: Boolean = true;
 }
