@@ -1,3 +1,9 @@
+.building .main_btns {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  gap: 2rem;
+}
 .floor {
   background-color: var(--secondary);
   padding: 1rem;
@@ -7,10 +13,18 @@
   gap: 2rem;
   height: calc(var(--height-of-floors) * 1px);
 }
-.btn_container{
+.btn_container {
   width: 100px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
+.btn_up,
+.btn_down {
+  background-color: darkgray;
+}
+
 /* lift */
 .lift {
   background-color: rgb(250, 250, 250);
@@ -24,9 +38,9 @@
 .door_left,
 .door_right {
   position: absolute;
-  width: 50%;
+  width: 49%;
   height: 100%;
-  background-color: var(--primary);
+  background-color: darkgray;
   transition: all var(--door_transition_speed) ease-in-out;
 }
 .lift .door_left {
